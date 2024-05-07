@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapSceneController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class MapSceneController : MonoBehaviour
         selectedCabinet = index;
         Debug.Log(selectedFloor);
         Debug.Log(selectedCabinet);
+        GameSceneLoader();
     }
 
     public void FloorChooser(int index)
@@ -37,5 +39,10 @@ public class MapSceneController : MonoBehaviour
                 canvases[i].SetActive(false);
             }
         }
+    }
+
+    public void GameSceneLoader()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }

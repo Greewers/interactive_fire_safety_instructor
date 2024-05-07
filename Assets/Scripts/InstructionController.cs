@@ -26,9 +26,13 @@ public class InstructionController : MonoBehaviour
         pageOne.SetActive(false);
         pageTwo.SetActive(true);
     }
-    public void MainMenuSceneLoader(string sceneName)
+    public void MainMenuSceneLoader()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("MainMenuScene");
+    }
+    public void MapSceneLoader()
+    {
+        SceneManager.LoadScene("MapScene");
     }
 
 }
