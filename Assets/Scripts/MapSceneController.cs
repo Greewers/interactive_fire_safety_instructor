@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class MapSceneController : MonoBehaviour
 {
     [SerializeField] GameObject[] canvases;
-    [SerializeField] GameObject[] cabinets;
-    public int selectedCabinet;
-    public int selectedFloor = 1;
+    public static int selectedFloor = 1;
+    public static string entryPointID;
+
     public void Start()
     {
         canvases[0].SetActive(true);
@@ -17,12 +17,10 @@ public class MapSceneController : MonoBehaviour
         canvases[2].SetActive(false);
         canvases[3].SetActive(false);
     }
-    public void CabinetChooser(int index)
+    public void CabinetChooser(string id)
     {
-        selectedCabinet = index;
-        Debug.Log(selectedFloor);
-        Debug.Log(selectedCabinet);
-        GameSceneLoader();
+        entryPointID = id;
+        SceneManager.LoadScene("GameScene");
     }
 
     public void FloorChooser(int index)
@@ -39,10 +37,5 @@ public class MapSceneController : MonoBehaviour
                 canvases[i].SetActive(false);
             }
         }
-    }
-
-    public void GameSceneLoader()
-    {
-        SceneManager.LoadScene("GameScene");
     }
 }
