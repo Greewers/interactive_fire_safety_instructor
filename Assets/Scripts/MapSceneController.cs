@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapSceneController : MonoBehaviour
 {
     [SerializeField] GameObject[] canvases;
+
     public static int selectedFloor = 1;
     public static string entryPointID;
 
@@ -38,4 +39,5 @@ public class MapSceneController : MonoBehaviour
             }
         }
     }
+
 }
